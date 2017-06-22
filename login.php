@@ -13,7 +13,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         if ((strtolower($_POST['email']) == 'me@example.com') && ($_POST['password'] == 'testpass')){
 
-            print '<p class="text--success">You are logged in!<br>Now you can blah, blah, blah...</p>';
+            ob_end_clean();
+            header('Location: welcome.php');
+            exit();
 
         } else {
 
